@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./FilmCard.css";
 import { Link } from "react-router-dom";
 import { IMovie } from "../../models/Interfaces";
 const imageURL = "https://image.tmdb.org/t/p/w500";
@@ -7,7 +7,7 @@ type MOV = {
     movie: IMovie
 };
 
-export const Card = ({movie}: MOV) => {
+export const FilmCard = ({movie}: MOV) => {
     return (
         <section className="card">
             <Link to={`/film/${movie.id}`}>
@@ -20,7 +20,6 @@ export const Card = ({movie}: MOV) => {
                 <aside className="card__bottom">
                     <div className="card__bottom-info">
                         <h4>{movie.original_title}</h4>
-                        <p>{movie.release_date}</p>
                     </div>
                 </aside>
             </Link>

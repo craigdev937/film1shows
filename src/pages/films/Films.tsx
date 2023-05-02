@@ -1,7 +1,7 @@
 import React from "react";
 import "./Films.css";
 import { MovieAPI } from "../../global/MovieAPI";
-import { Card } from "../../components/card/Card";
+import { FilmCard } from "../../components/filmcard/FilmCard";
 
 export const Films = () => {
     const { error, isLoading, data } = MovieAPI.usePopQuery();
@@ -13,8 +13,11 @@ export const Films = () => {
                 <h1>Loading...</h1>
             ) : (
                 <aside className="film__container">
-                    {data?.results.map((movie) => (
-                        <Card movie={movie} />
+                    {data && data.results.map((movie) => (
+                        <FilmCard
+                            key={movie.id} 
+                            movie={movie} 
+                        />
                     ))}
                 </aside>
             )}

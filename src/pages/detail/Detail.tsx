@@ -1,11 +1,28 @@
 import React from "react";
 import "./Detail.css";
+import { useParams } from "react-router-dom";
+import { MovieAPI } from "../../global/MovieAPI";
+import { MovieCard } from "../../components/moviecard/MovieCard";
 
 export const Detail = () => {
+    const { id } = useParams();
+    const mediaID = id !== undefined ? String(id) : "";
+    const { error, isLoading, data } = MovieAPI.useMovQuery(mediaID);
+    const movie = data!;
+    if (error) return <h1>Something went wrong! 😨</h1>;
+    
     return (
         <React.Fragment>
-            <h1>Detail</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta natus earum nam? Aliquid corrupti nisi deserunt veritatis optio placeat ipsam sit quas debitis distinctio. Possimus officiis esse itaque sequi maiores?</p>
+            {isLoading ? (
+                <h1>Loading...</h1>
+            ) : (
+                <section>
+                    <MovieCard 
+                        key={movie.id} 
+                        movie={movie} 
+                    />
+                </section>
+            )}
         </React.Fragment>
     );
 };

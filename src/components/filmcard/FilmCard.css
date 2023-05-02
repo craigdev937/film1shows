@@ -1,5 +1,6 @@
 .card {
     background: var(--background);
+    /* background: rgba(0, 0, 0, 0.1); */
     cursor: pointer;
     transition: all 0.3s;
     min-height: 450px;
@@ -35,5 +36,7 @@
     font-weight: 400;
     margin-bottom: 10px;
 }
+
+
 
 
