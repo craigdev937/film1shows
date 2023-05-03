@@ -1,8 +1,7 @@
 import React from "react";
-import "./Detail.css";
 import { useParams } from "react-router-dom";
 import { MovieAPI } from "../../global/MovieAPI";
-import { MovieCard } from "../../components/moviecard/MovieCard";
+import { DetailCard } from "../../components/detailcard/DetailCard";
 
 export const Detail = () => {
     const { id } = useParams();
@@ -17,7 +16,7 @@ export const Detail = () => {
                 <h1>Loading...</h1>
             ) : (
                 <section>
-                    <MovieCard 
+                    <DetailCard 
                         key={movie.id} 
                         movie={movie} 
                     />

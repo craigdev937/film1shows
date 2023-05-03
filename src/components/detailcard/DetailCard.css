@@ -1,0 +1,32 @@
+.movie {
+    background: var(--background);
+    color: var(--text);
+}
+
+.movie__card {
+    display: grid;
+    grid-template-areas: 
+        "movie__img movie__title"
+        "movie__img movie__overview"
+        "movie__img movie__button";
+}
+
+.movie__title {
+    grid-area: movie__title;
+}
+
+.movie__img {
+    grid-area: movie__img;
+}
+
+.movie__overview {
+    grid-area: movie__overview;
+}
+
+.movie__button {
+    grid-area: movie__button;
+    height: 40px;
+    width: 100%;
+}
+
+
