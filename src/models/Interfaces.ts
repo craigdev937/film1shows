@@ -13,6 +13,16 @@ export interface IMovie {
     }[]
 };
 
+export interface IMovieState {
+    searchText: string,
+    films: IMovie[],
+    tvShows: IMovie[],
+    people: IMovie[],
+    searchList: IMovie[],
+    loading: boolean,
+    error: Error | null
+};
+
 export interface IMedia {
     page: number,
     results: {

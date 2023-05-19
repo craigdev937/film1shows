@@ -13,6 +13,7 @@
 
 .movie__title {
     grid-area: movie__title;
+    font-size: 2rem;
 }
 
 .movie__img {
